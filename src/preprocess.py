@@ -1,40 +1,30 @@
-import sys
-import os
-
-# Fix path
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+# src/preprocess.py
 
 import pandas as pd
+from sklearn.preprocessing import StandardScaler, LabelEncoder
 
-from src.config import RAW_DATA_PATH
-
-
-def clean_data(df):
+def preprocess(df):
     """
-    Remove duplicates and missing values
+    Preprocess input DataFrame for fraud detection
     """
+    df = df.copy()
 
-    df = df.drop_duplicates()
-    df = df.dropna()
+    # Handle missing values
+    for col in df.columns:
+        if df[col].dtype == 'object':
+            df[col] = df[col].fillna('Unknown')
+        else:
+            df[col] = df[col].fillna(df[col].median())
+
+    # Encode categorical variables
+    categorical_cols = df.select_dtypes(include=['object']).columns
+    for col in categorical_cols:
+        le = LabelEncoder()
+        df[col] = le.fit_transform(df[col])
+
+    # Scale numerical features
+    numerical_cols = df.select_dtypes(include=['int64', 'float64']).columns
+    scaler = StandardScaler()
+    df[numerical_cols] = scaler.fit_transform(df[numerical_cols])
 
     return df
-
-
-def load_and_clean():
-    """
-    Load raw data and clean it
-    """
-
-    df = pd.read_csv(RAW_DATA_PATH)
-    df = clean_data(df)
-
-    return df
-
-
-def main():
-    df = load_and_clean()
-    print("✅ Cleaned Data Shape:", df.shape)
-
-
-if __name__ == "__main__":
-    main()
