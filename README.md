@@ -4,7 +4,7 @@
 
 ---
 
-# 📌 1. Project Overview
+#  1. Project Overview
 
 This project implements a **production-grade machine learning pipeline** for detecting fraudulent credit card transactions.
 
@@ -19,7 +19,7 @@ It covers the complete ML lifecycle, including:
 
 ---
 
-# 📊 2. Dataset
+#  2. Dataset
 
 **Source:** Credit Card Fraud Dataset (Kaggle)
 
@@ -34,7 +34,7 @@ It covers the complete ML lifecycle, including:
 
 ---
 
-# 📁 3. Folder Structure
+#  3. Folder Structure
 
 ```
 fraud-detection-ml/
@@ -48,15 +48,15 @@ fraud-detection-ml/
 
 ---
 
-# ⚙️ 4. Task 1 — ML Pipeline & Data Validation
+#  4. Task 1 — ML Pipeline & Data Validation
 
-## ✅ Data Validation
+##  Data Validation
 
 * Checked missing values
 * Removed duplicate entries
 * Verified data types
 
-## 🛠️ Feature Engineering
+##  Feature Engineering
 
 Four additional features were created:
 
@@ -65,7 +65,7 @@ Four additional features were created:
 * `Amount_Z`
 * `Amount_Rolling_Mean`
 
-## 🤖 Model Selection
+##  Model Selection
 
 **Model Used:** Logistic Regression
 
@@ -75,30 +75,30 @@ Four additional features were created:
 * Stable performance
 * Suitable for imbalanced datasets
 
-## 🔁 Cross Validation
+##  Cross Validation
 
 * Stratified K-Fold (5 folds)
 
-## 📈 Evaluation Metrics
+##  Evaluation Metrics
 
 * ROC-AUC Score
 * F1 Score
 * Precision
 * Recall
 
-## 💾 Model Saving
+##  Model Saving
 
 * Model stored using `joblib`
 
-## ♻️ Reproducibility
+##  Reproducibility
 
 * Random seed fixed for consistent results
 
 ---
 
-# 🐞 5. Task 2 — Debugging
+#  5. Task 2 — Debugging
 
-## ❗ Problems Identified
+##  Problems Identified
 
 * Low F1 score
 * Severe class imbalance
@@ -110,12 +110,12 @@ Four additional features were created:
 * Default probability threshold
 * Random sampling effects
 
-## 🛠️ Fixes Applied
+##  Fixes Applied
 
 * SMOTE (Synthetic Minority Oversampling)
 * Threshold tuning
 
-## 📊 Results
+##  Results
 
 **Before Optimization:**
 
@@ -127,28 +127,28 @@ Four additional features were created:
 
 ---
 
-# 🚀 6. Task 3 — Performance Improvement
+#  6. Task 3 — Performance Improvement
 
-## 📌 Techniques Used
+##  Techniques Used
 
 * SMOTE
 * Advanced feature engineering
 * Threshold optimization
 
-## 📈 Improvement Achieved
+##  Improvement Achieved
 
 * 40%+ increase in F1 Score
 
-## 🎯 Reason for Improvement
+##  Reason for Improvement
 
 * Better learning of minority class patterns
 * Reduced bias toward majority class
 
 ---
 
-# 🏗️ 7. Task 4 — System Design
+#  7. Task 4 — System Design
 
-## 🧩 Architecture
+##  Architecture
 
 ```
 Transaction Data
@@ -172,19 +172,19 @@ Monitoring
 Retraining
 ```
 
-## 📡 Monitoring
+##  Monitoring
 
 * Performance tracking
 * Data drift detection
 
-## 🔄 Retraining Strategy
+##  Retraining Strategy
 
 * Monthly retraining
 * Automatic retraining on drift detection
 
 ---
 
-# 🧰 8. Tech Stack
+#  8. Tech Stack
 
 * Python
 * Pandas
@@ -195,15 +195,15 @@ Retraining
 
 ---
 
-# ▶️ 9. How to Run the Project
+# ▶ 9. How to Run the Project
 
-## 📥 Installation
+##  Installation
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## ▶️ Execution
+## ▶ Execution
 
 ```bash
 python src/preprocess.py
@@ -215,7 +215,7 @@ python src/threshold_tuning.py
 
 ---
 
-# 📝 10. Conclusion
+#  10. Conclusion
 
 This project demonstrates a **complete end-to-end machine learning lifecycle**, from data preprocessing to deployment readiness.
 
@@ -223,7 +223,7 @@ It highlights practical handling of imbalanced datasets and production-level ML 
 
 ---
 
-# 🌐 Fraud Detection ML App
+#  Fraud Detection ML App
 
 This project is deployed as a web application for real-time fraud detection.
 
