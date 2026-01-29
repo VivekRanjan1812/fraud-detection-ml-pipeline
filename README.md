@@ -1,22 +1,24 @@
- Credit Card Fraud Detection — ML Engineer Assignment
+Credit Card Fraud Detection — ML Engineer Assignment
 
 Author
 Vivek Ranjan (MCA, UPES)
 
- 1. Project Overview
+1. Project Overview
 
 This project implements a production-grade machine learning pipeline for detecting fraudulent credit card transactions.
 
 It includes:
-- Data validation
-- Feature engineering
-- Model training
-- Debugging
-- Optimization
-- Deployment readiness
+
+* Data validation
+* Feature engineering
+* Model training
+* Debugging
+* Optimization
+* Deployment readiness
 
 
- 2. Dataset
+
+2. Dataset
 
 Source: Credit Card Fraud Dataset (Kaggle)
 
@@ -27,7 +29,7 @@ Target Column: Class
 0 = Normal  
 1 = Fraud
 
- 3. Folder Structure
+3. Folder Structure
 
 fraud-detection-ml/
 |
@@ -37,34 +39,38 @@ fraud-detection-ml/
 |-- README.md
 |-- requirements.txt
 
- 4. Task 1 — ML Pipeline Data Validation
-- Checked missing values
-- Removed duplicates
-- Verified data types
+4. Task 1 — ML Pipeline Data Validation
+
+* Checked missing values
+* Removed duplicates
+* Verified data types
 
 Feature Engineering
 Added 4 features:
-- Hour
-- Log_Amount
-- Amount_Z
-- Amount_Rolling_Mean
 
- Model
+* Hour
+* Log\_Amount
+* Amount\_Z
+* Amount\_Rolling\_Mean
+
+Model
 Logistic Regression
 
 Reason:
-- Interpretable
-- Stable
-- Good for imbalanced data
 
- Cross Validation
+* Interpretable
+* Stable
+* Good for imbalanced data
+
+Cross Validation
 Stratified K-Fold (5 folds)
 
- Evaluation
-- ROC-AUC
-- F1 Score
-- Precision
-- Recall
+Evaluation
+
+* ROC-AUC
+* F1 Score
+* Precision
+* Recall
 
 Model Saving
 Model saved using joblib
@@ -73,21 +79,25 @@ Reproducibility
 Random seed fixed
 
 
+
 5. Task 2 — Debugging
 
 Problems
-- Low F1 score
-- Class imbalance
-- Unstable predictions
+
+* Low F1 score
+* Class imbalance
+* Unstable predictions
 
 Root Causes
-- Data imbalance
-- Default threshold
-- Random sampling
+
+* Data imbalance
+* Default threshold
+* Random sampling
 
 ### Fixes
-- SMOTE
-- Threshold tuning
+
+* SMOTE
+* Threshold tuning
 
 ### Results
 
@@ -100,9 +110,10 @@ F1 ≈ 0.10
 6. Task 3 — Performance Improvement
 
 Techniques:
-- SMOTE
-- Feature engineering
-- Threshold tuning
+
+* SMOTE
+* Feature engineering
+* Threshold tuning
 
 Improvement:
 40%+ F1 increase
@@ -111,48 +122,53 @@ Reason:
 Better minority learning
 
 
+
 7. Task 4 — System Design
 
 Architecture
 
 Transaction Data
-        ↓
+↓
 Data Ingestion
-        ↓
+↓
 Preprocessing
-        ↓
+↓
 Feature Engineering
-        ↓
+↓
 Model Training
-        ↓
+↓
 Model Storage
-        ↓
+↓
 Inference API
-        ↓
+↓
 Fraud Alerts
-        ↓
+↓
 Monitoring
-        ↓
+↓
 Retraining
 
 
+
 Monitoring
-- Performance tracking
-- Drift detection
+
+* Performance tracking
+* Drift detection
 
 Retraining
-- Monthly retraining
-- Triggered on drift
+
+* Monthly retraining
+* Triggered on drift
+
 
 
 8. Tech Stack
 
-- Python
-- Pandas
-- NumPy
-- Scikit-learn
-- Imbalanced-learn
-- Joblib
+* Python
+* Pandas
+* NumPy
+* Scikit-learn
+* Imbalanced-learn
+* Joblib
 
 9. How to Run
 
@@ -166,9 +182,33 @@ python src/preprocess.py
 python src/features.py  
 python src/train.py  
 python src/evaluate.py  
-python src/threshold_tuning.py  
+python src/threshold\_tuning.py
 
 
- 10. Conclusion
+
+10. Conclusion
 
 This project demonstrates a complete ML lifecycle from data processing to deployment readiness.
+
+
+
+\# Fraud Detection ML App
+
+
+
+This is a machine learning app for detecting fraudulent transactions.
+
+
+
+\*\*Live App:\*\* \[Click here to view the app](https://fraud-detection-ml-pipeline-my6gqpagn4lbg3iardrkcy.streamlit.app/)
+
+
+
+\## How to run locally
+
+
+
+1\. Clone the repo:
+
+
+
