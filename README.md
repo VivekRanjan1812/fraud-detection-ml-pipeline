@@ -1,13 +1,14 @@
-Credit Card Fraud Detection — ML Engineer Assignment
+# 💳 Credit Card Fraud Detection — ML Engineer Assignment
 
-Author
-Vivek Ranjan (MCA, UPES)
+**Author:** Vivek Ranjan (MCA, UPES)
 
-1. Project Overview
+---
 
-This project implements a production-grade machine learning pipeline for detecting fraudulent credit card transactions.
+# 📌 1. Project Overview
 
-It includes:
+This project implements a **production-grade machine learning pipeline** for detecting fraudulent credit card transactions.
+
+It covers the complete ML lifecycle, including:
 
 * Data validation
 * Feature engineering
@@ -16,152 +17,174 @@ It includes:
 * Optimization
 * Deployment readiness
 
+---
 
+# 📊 2. Dataset
 
-2. Dataset
+**Source:** Credit Card Fraud Dataset (Kaggle)
 
-Source: Credit Card Fraud Dataset (Kaggle)
+* **Total Samples:** 284,807
+* **Fraud Cases:** 492 (Highly Imbalanced)
+* **Target Column:** `Class`
 
-Samples: 284,807  
-Fraud: 492 (Highly Imbalanced)
+| Value | Meaning                |
+| ----- | ---------------------- |
+| 0     | Normal Transaction     |
+| 1     | Fraudulent Transaction |
 
-Target Column: Class  
-0 = Normal  
-1 = Fraud
+---
 
-3. Folder Structure
+# 📁 3. Folder Structure
 
+```
 fraud-detection-ml/
-|
-|-- data/
-|-- models/
-|-- src/
-|-- README.md
-|-- requirements.txt
+│
+├── data/
+├── models/
+├── src/
+├── README.md
+└── requirements.txt
+```
 
-4. Task 1 — ML Pipeline Data Validation
+---
+
+# ⚙️ 4. Task 1 — ML Pipeline & Data Validation
+
+## ✅ Data Validation
 
 * Checked missing values
-* Removed duplicates
+* Removed duplicate entries
 * Verified data types
 
-Feature Engineering
-Added 4 features:
+## 🛠️ Feature Engineering
 
-* Hour
-* Log\_Amount
-* Amount\_Z
-* Amount\_Rolling\_Mean
+Four additional features were created:
 
-Model
-Logistic Regression
+* `Hour`
+* `Log_Amount`
+* `Amount_Z`
+* `Amount_Rolling_Mean`
 
-Reason:
+## 🤖 Model Selection
 
-* Interpretable
-* Stable
-* Good for imbalanced data
+**Model Used:** Logistic Regression
 
-Cross Validation
-Stratified K-Fold (5 folds)
+### Reason for Selection:
 
-Evaluation
+* Easy to interpret
+* Stable performance
+* Suitable for imbalanced datasets
 
-* ROC-AUC
+## 🔁 Cross Validation
+
+* Stratified K-Fold (5 folds)
+
+## 📈 Evaluation Metrics
+
+* ROC-AUC Score
 * F1 Score
 * Precision
 * Recall
 
-Model Saving
-Model saved using joblib
+## 💾 Model Saving
 
-Reproducibility
-Random seed fixed
+* Model stored using `joblib`
 
+## ♻️ Reproducibility
 
+* Random seed fixed for consistent results
 
-5. Task 2 — Debugging
+---
 
-Problems
+# 🐞 5. Task 2 — Debugging
+
+## ❗ Problems Identified
 
 * Low F1 score
-* Class imbalance
+* Severe class imbalance
 * Unstable predictions
 
-Root Causes
+## 🔍 Root Causes
 
-* Data imbalance
-* Default threshold
-* Random sampling
+* Skewed data distribution
+* Default probability threshold
+* Random sampling effects
 
-### Fixes
+## 🛠️ Fixes Applied
 
-* SMOTE
+* SMOTE (Synthetic Minority Oversampling)
 * Threshold tuning
 
-### Results
+## 📊 Results
 
-Before:
-F1 ≈ 0.07
+**Before Optimization:**
 
-After:
-F1 ≈ 0.10
+* F1 Score ≈ 0.07
 
-6. Task 3 — Performance Improvement
+**After Optimization:**
 
-Techniques:
+* F1 Score ≈ 0.10
+
+---
+
+# 🚀 6. Task 3 — Performance Improvement
+
+## 📌 Techniques Used
 
 * SMOTE
-* Feature engineering
-* Threshold tuning
+* Advanced feature engineering
+* Threshold optimization
 
-Improvement:
-40%+ F1 increase
+## 📈 Improvement Achieved
 
-Reason:
-Better minority learning
+* 40%+ increase in F1 Score
 
+## 🎯 Reason for Improvement
 
+* Better learning of minority class patterns
+* Reduced bias toward majority class
 
-7. Task 4 — System Design
+---
 
-Architecture
+# 🏗️ 7. Task 4 — System Design
 
+## 🧩 Architecture
+
+```
 Transaction Data
-↓
+      ↓
 Data Ingestion
-↓
+      ↓
 Preprocessing
-↓
+      ↓
 Feature Engineering
-↓
+      ↓
 Model Training
-↓
+      ↓
 Model Storage
-↓
+      ↓
 Inference API
-↓
+      ↓
 Fraud Alerts
-↓
+      ↓
 Monitoring
-↓
+      ↓
 Retraining
+```
 
-
-
-Monitoring
+## 📡 Monitoring
 
 * Performance tracking
-* Drift detection
+* Data drift detection
 
-Retraining
+## 🔄 Retraining Strategy
 
 * Monthly retraining
-* Triggered on drift
+* Automatic retraining on drift detection
 
+---
 
-
-8. Tech Stack
+# 🧰 8. Tech Stack
 
 * Python
 * Pandas
@@ -170,40 +193,45 @@ Retraining
 * Imbalanced-learn
 * Joblib
 
-9. How to Run
+---
 
-Install:
+# ▶️ 9. How to Run the Project
 
+## 📥 Installation
+
+```bash
 pip install -r requirements.txt
+```
 
-Run:
+## ▶️ Execution
 
-python src/preprocess.py  
-python src/features.py  
-python src/train.py  
-python src/evaluate.py  
-python src/threshold\_tuning.py
+```bash
+python src/preprocess.py
+python src/features.py
+python src/train.py
+python src/evaluate.py
+python src/threshold_tuning.py
+```
 
+---
 
+# 📝 10. Conclusion
 
-10. Conclusion
+This project demonstrates a **complete end-to-end machine learning lifecycle**, from data preprocessing to deployment readiness.
 
-This project demonstrates a complete ML lifecycle from data processing to deployment readiness.
+It highlights practical handling of imbalanced datasets and production-level ML design principles.
 
+---
 
+# 🌐 Fraud Detection ML App
 
-\# Fraud Detection ML App
+This project is deployed as a web application for real-time fraud detection.
 
+**Live App:**
+👉 [https://fraud-detection-ml-pipeline-my6gqpagn4lbg3iardrkcy.streamlit.app/](https://fraud-detection-ml-pipeline-my6gqpagn4lbg3iardrkcy.streamlit.app/)
 
+---
 
-This is a machine learning app for detecting fraudulent transactions.
-
-
-
-\*\*Live App:\*\* \[Click here to view the app](https://fraud-detection-ml-pipeline-my6gqpagn4lbg3iardrkcy.streamlit.app/)
-
-
-
-
+✨ *Developed by Vivek Ranjan (MCA, UPES)*
 
 
