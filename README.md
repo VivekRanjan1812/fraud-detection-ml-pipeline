@@ -204,11 +204,6 @@ This is a machine learning app for detecting fraudulent transactions.
 
 
 
-\## How to run locally
-
-
-
-1\. Clone the repo:
 
 
 
